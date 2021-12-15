@@ -18,14 +18,15 @@ const EditMovieForm = (props) => {
 
     const { id } = useParams();
 
-	console.log('current id:', id)
-
     useEffect(()=>{
         axios.get(`http://localhost:9000/api/movies/${id}`)
             .then(res=>{
-				console.log(res)
+				// console.log('Editmovieform data:', res.data)
                 setMovie(res.data);
             })
+			.catch(err =>{
+				console.log(err)
+			})
 	}, [id]);
 	
 	const handleChange = (e) => {
