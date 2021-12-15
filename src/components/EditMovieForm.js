@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const EditMovieForm = (props) => {
+	console.log('EDITMOVIEFORM LOADING')
 	const { push } = useHistory();
 
 	const { setMovies } = props;
