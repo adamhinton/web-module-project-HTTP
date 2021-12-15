@@ -50,7 +50,7 @@ const App = (props) => {
               <EditMovieForm setMovies = {setMovies}/>
             </Route>
 
-            <Route path = 'movies/add'>
+            <Route path = '/movies/add'>
               <AddMovieForm/>
             </Route>
 
