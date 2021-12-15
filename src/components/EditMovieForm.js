@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 
 import axios from 'axios';
 
 const EditMovieForm = (props) => {
-	console.log('EDITMOVIEFORM LOADING')
 	const { push } = useHistory();
+
 
 	const { setMovies } = props;
 	const [movie, setMovie] = useState({
@@ -19,9 +18,12 @@ const EditMovieForm = (props) => {
 
     const { id } = useParams();
 
+	console.log('current id:', id)
+
     useEffect(()=>{
         axios.get(`http://localhost:9000/api/movies/${id}`)
             .then(res=>{
+				console.log(res)
                 setMovie(res.data);
             })
 	}, [id]);
